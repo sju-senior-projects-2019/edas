@@ -1,0 +1,17 @@
+EEG Data Set Options: 
+
+Australian EEG Database - range of neurotypical and neuroatypical subjects (approx. 50 with ASD): AS applied for access via email, awaiting confirmation
+https://aed.newcastle.edu.au/AED/login.jsp
+
+SFARI Collection - approx. 50 EEG datasets available, some subjects do not have ASD but have a range of "clearly defined genetic syndromes that are associated with ASD": ED applied for access
+https://sfari.org/resources/autism-cohorts/simons-vip
+
+
+DATASETS w/ ACCESS:
+
+1. BCI Competition II login information username: as652567@sju.edu password: Phieng9ou1
+http://bbci.de/competition/ii/download
+EEG data from trials; no differentiation between neurotypical and neuroatypical
+
+2. Eye tracking EEG data grouped by age range; no differentation between neurotypical and neuroatypical - data description + link pushed to Git by ED
+http://fcon_1000.projects.nitrc.org/indi/cmi_eeg/eeg.html
