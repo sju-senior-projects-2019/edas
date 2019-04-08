@@ -45,19 +45,20 @@ public class Correlations {
         channels.add("'EEG T1-REF'");
         channels.add("'EEG T2-REF'");
         channels.add("'PHOTIC-REF'");
-        channels.add("'IBI'");
-        channels.add("'BURSTS'");
-        channels.add("'BURSTS'");
+        //channels.add("'IBI'");
+        //channels.add("'BURSTS'");
 
 
         //System.out.println(channels);
         //System.out.println(channels.size());
 
-        //generate correlation statements for all possible combinations C(n,r) = C(36, 2) = 630
+        //generate correlation statements for all possible combinations C(n,r) = C(34, 2) = 528
         int count = 1; //start at 1 to skip self-comparison for index position 0
+        int num = 0;
         for (int i = 0; i < channels.size(); i++) {
             for (int j = count; j < channels.size(); j++) {
-                System.out.println("cor(sig$" + channels.get(i) + "$signal, sig$" + channels.get(j) + "$signal, method = 'pearson')");
+                System.out.println("v <- append(v, cor(sig$" + channels.get(i) + "$signal, sig$" + channels.get(j) + "$signal, method = 'pearson'), after = length(" + num + "))");
+                num++;
             }
 
             count++; //increment count to perform correlation on count to channels.size()-1 and avoid repetition
