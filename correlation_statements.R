@@ -528,16 +528,23 @@ v <- append(v, cor(sig$'EEG T1-REF'$signal, sig$'EEG T2-REF'$signal, method = 'p
 v <- append(v, cor(sig$'EEG T1-REF'$signal, sig$'PHOTIC-REF'$signal, method = 'pearson'), after = length(526))
 v <- append(v, cor(sig$'EEG T2-REF'$signal, sig$'PHOTIC-REF'$signal, method = 'pearson'), after = length(527))
 
-#find index position and value for min of vector
-which.min(v)
-min(v)
+#find index position and value for greatest negative correlation (i.e. largest negative number)
+max_neg_index <- which.min(v)
+max_neg_value <- min(v)
 
-#find index position and value for max of vector
-which.max(v)
-max(v)
+#find index position and value for greatest positive correlation (i.e. largest positive number)
+max_pos_index <- which.max(v)
+max_pos_value <- max(v)
 
-z <- c(min(v), max(v)) #vector of values for min and max correlations 
-y <- c(which.min(v), which.max(v)) #vector of index positions for min and max correlations 
-plot(v, ylab ="correlations (v)" ,col=ifelse(v==z[1] | v==z[2], "red", "black"), main = "Correlations Plot w/ Min & Max")
+#find index position and value for min correlation (i.e. closest to 0)
+min_corr_index <- order(abs(v))[1] 
+min_corr_value <- v[min_corr_index]
+
+# plot correlations
+plot(v, ylab ="correlations (v)" ,col=ifelse(v==max_neg_value | v==max_pos_value | v==min_corr_value, "red", "black"), main = "Correlations Plot w/ Min & Max")
+
+
+
+
 
 
